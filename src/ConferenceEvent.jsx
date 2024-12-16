@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./ConferenceEvent.css";
 import TotalCost from "./TotalCost";
 import { useSelector, useDispatch } from "react-redux";
@@ -100,12 +100,13 @@ const ConferenceEvent = () => {
                               <td>{item.name}</td>
                               <td>${item.cost}</td>
                               <td>
-                                  {item.type === "meals" || item.numberOfPeople
+                                  {item.type === "meals" || numberOfPeople
                                   ? ` For ${numberOfPeople} people`
                                   : item.quantity}
                               </td>
-                              <td>{item.type === "meals" || item.numberOfPeople
-                                  ? `${item.cost * item.numberOfPeople}`
+                              
+                              <td>{item.type === "meals" || numberOfPeople
+                                  ? `${item.cost * numberOfPeople}`
                                   : `${item.cost * item.quantity}`}
                               </td>
                           </tr>
