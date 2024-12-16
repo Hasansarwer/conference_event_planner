@@ -71,7 +71,9 @@ const ConferenceEvent = () => {
           });
         } else if(section === "meals")
           mealsItems.forEach((item)=>{
+            if(item.selected){
             totalCost += item.cost * numberOfPeople;
+            }
           });
         return totalCost;
       };
