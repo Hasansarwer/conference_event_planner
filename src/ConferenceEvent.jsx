@@ -10,7 +10,7 @@ const ConferenceEvent = () => {
     const dispatch = useDispatch();
     const remainingAuditoriumQuantity = 3 - venueItems.find(item => item.name === "Auditorium Hall (Capacity:200)").quantity;
 
-    
+
     const handleToggleItems = () => {
         console.log("handleToggleItems called");
         setShowItems(!showItems);
@@ -18,11 +18,11 @@ const ConferenceEvent = () => {
 
     const handleAddToCart = (index) => {
         if (venueItems[index].name === "Auditorium Hall (Capacity:200)" && venueItems[index].quantity >= 3) {
-          return; 
+          return;
         }
         dispatch(incrementQuantity(index));
       };
-    
+
       const handleRemoveFromCart = (index) => {
         if (venueItems[index].quantity > 0) {
           dispatch(decrementQuantity(index));
@@ -35,7 +35,7 @@ const ConferenceEvent = () => {
     };
 
     const handleMealSelection = (index) => {
-       
+
     };
 
     const getItemsFromTotalCost = () => {
